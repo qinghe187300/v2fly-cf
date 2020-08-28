@@ -51,7 +51,7 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: cccbbb123
+        - name: ${{ secrets.CF_APPNAME_IBM }}
           memory: 128M
           disk_quota: 128M
           routes:
@@ -69,5 +69,6 @@ jobs:
         cf_org: ${{ secrets.CF_ORG_IBM }}
         cf_space: ${{ secrets.CF_SPACE_IBM }}
         command: >
-          push cccbbb123 -f manifest-ibm.yml
-          
+          push ${{ secrets.CF_APPNAME_IBM }} -f manifest-ibm.yml
+
+
