@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  deploy:
+  ibm20200620:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
