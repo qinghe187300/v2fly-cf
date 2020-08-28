@@ -51,7 +51,7 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: v2ws
+        - name: cccbbb123
           memory: 256M
           random-route: true
           command: ./v2ray
@@ -67,5 +67,5 @@ jobs:
         cf_org: ${{ secrets.CF_ORG_IBM }}
         cf_space: ${{ secrets.CF_SPACE_IBM }}
         command: >
-          push v2ws -f manifest-ibm.yml
+          push cccbbb123 -f manifest-ibm.yml
           
