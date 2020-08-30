@@ -114,11 +114,11 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: ${{ secrets.CF_APPNAME_IBM }}
+        - name: ${{ secrets.CF_APPNAME_IBM1 }}
           memory: 128M
           disk_quota: 128M
           routes:
-          - route: ${{ secrets.CF_ROUTE_IBM }}
+          - route: ${{ secrets.CF_ROUTE_IBM1 }}
           command: ./v2ray
           buildpacks:
           - binary_buildpack
@@ -127,12 +127,12 @@ jobs:
     - uses: citizen-of-planet-earth/cf-cli-action@v1
       with:
         cf_api: https://api.us-south.cf.cloud.ibm.com
-        cf_username: ${{ secrets.CF_USER_IBM }}
+        cf_username: ${{ secrets.CF_USER_IBM1 }}
         cf_password: ${{ secrets.CF_PASSWORD_IBM }}
-        cf_org: ${{ secrets.CF_ORG_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM1 }}
         cf_space: ${{ secrets.CF_SPACE_IBM }}
         command: >
-          push ${{ secrets.CF_APPNAME_IBM }} -f manifest-ibm.yml
+          push ${{ secrets.CF_APPNAME_IBM1 }} -f manifest-ibm.yml
           
   ibm20200708:
     needs: ibm20200628
@@ -177,11 +177,11 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: ${{ secrets.CF_APPNAME_IBM }}
+        - name: ${{ secrets.CF_APPNAME_IBM2 }}
           memory: 128M
           disk_quota: 128M
           routes:
-          - route: ${{ secrets.CF_ROUTE_IBM }}
+          - route: ${{ secrets.CF_ROUTE_IBM2 }}
           command: ./v2ray
           buildpacks:
           - binary_buildpack
@@ -190,12 +190,12 @@ jobs:
     - uses: citizen-of-planet-earth/cf-cli-action@v1
       with:
         cf_api: https://api.us-south.cf.cloud.ibm.com
-        cf_username: ${{ secrets.CF_USER_IBM }}
+        cf_username: ${{ secrets.CF_USER_IBM2 }}
         cf_password: ${{ secrets.CF_PASSWORD_IBM }}
-        cf_org: ${{ secrets.CF_ORG_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM2 }}
         cf_space: ${{ secrets.CF_SPACE_IBM }}
         command: >
-          push ${{ secrets.CF_APPNAME_IBM }} -f manifest-ibm.yml
+          push ${{ secrets.CF_APPNAME_IBM2 }} -f manifest-ibm.yml
 
   ibm20200709:
     needs: ibm20200708
@@ -240,11 +240,11 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: ${{ secrets.CF_APPNAME_IBM }}
+        - name: ${{ secrets.CF_APPNAME_IBM3 }}
           memory: 128M
           disk_quota: 128M
           routes:
-          - route: ${{ secrets.CF_ROUTE_IBM }}
+          - route: ${{ secrets.CF_ROUTE_IBM3 }}
           command: ./v2ray
           buildpacks:
           - binary_buildpack
@@ -253,12 +253,12 @@ jobs:
     - uses: citizen-of-planet-earth/cf-cli-action@v1
       with:
         cf_api: https://api.us-south.cf.cloud.ibm.com
-        cf_username: ${{ secrets.CF_USER_IBM }}
+        cf_username: ${{ secrets.CF_USER_IBM3 }}
         cf_password: ${{ secrets.CF_PASSWORD_IBM }}
-        cf_org: ${{ secrets.CF_ORG_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM3 }}
         cf_space: ${{ secrets.CF_SPACE_IBM }}
         command: >
-          push ${{ secrets.CF_APPNAME_IBM }} -f manifest-ibm.yml
+          push ${{ secrets.CF_APPNAME_IBM3 }} -f manifest-ibm.yml
           
   ibm20200712:
     needs: ibm20200709
@@ -303,11 +303,11 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: ${{ secrets.CF_APPNAME_IBM }}
+        - name: ${{ secrets.CF_APPNAME_IBM4 }}
           memory: 128M
           disk_quota: 128M
           routes:
-          - route: ${{ secrets.CF_ROUTE_IBM }}
+          - route: ${{ secrets.CF_ROUTE_IBM4 }}
           command: ./v2ray
           buildpacks:
           - binary_buildpack
@@ -315,13 +315,13 @@ jobs:
     
     - uses: citizen-of-planet-earth/cf-cli-action@v1
       with:
-        cf_api: https://api.us-south.cf.cloud.ibm.com
-        cf_username: ${{ secrets.CF_USER_IBM }}
+        cf_api: https://api.eu-gb.cf.cloud.ibm.com
+        cf_username: ${{ secrets.CF_USER_IBM4 }}
         cf_password: ${{ secrets.CF_PASSWORD_IBM }}
-        cf_org: ${{ secrets.CF_ORG_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM4 }}
         cf_space: ${{ secrets.CF_SPACE_IBM }}
         command: >
-          push ${{ secrets.CF_APPNAME_IBM }} -f manifest-ibm.yml
+          push ${{ secrets.CF_APPNAME_IBM4 }} -f manifest-ibm.yml
           
   ibm20200725:
     needs: ibm20200712
@@ -366,11 +366,11 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: ${{ secrets.CF_APPNAME_IBM }}
+        - name: ${{ secrets.CF_APPNAME_IBM5 }}
           memory: 128M
           disk_quota: 128M
           routes:
-          - route: ${{ secrets.CF_ROUTE_IBM }}
+          - route: ${{ secrets.CF_ROUTE_IBM5 }}
           command: ./v2ray
           buildpacks:
           - binary_buildpack
@@ -379,12 +379,12 @@ jobs:
     - uses: citizen-of-planet-earth/cf-cli-action@v1
       with:
         cf_api: https://api.us-south.cf.cloud.ibm.com
-        cf_username: ${{ secrets.CF_USER_IBM }}
+        cf_username: ${{ secrets.CF_USER_IBM5 }}
         cf_password: ${{ secrets.CF_PASSWORD_IBM }}
-        cf_org: ${{ secrets.CF_ORG_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM5 }}
         cf_space: ${{ secrets.CF_SPACE_IBM }}
         command: >
-          push ${{ secrets.CF_APPNAME_IBM }} -f manifest-ibm.yml
+          push ${{ secrets.CF_APPNAME_IBM5 }} -f manifest-ibm.yml
           
   ibm20200731:
     needs: ibm20200725
@@ -429,11 +429,11 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: ${{ secrets.CF_APPNAME_IBM }}
+        - name: ${{ secrets.CF_APPNAME_IBM6 }}
           memory: 128M
           disk_quota: 128M
           routes:
-          - route: ${{ secrets.CF_ROUTE_IBM }}
+          - route: ${{ secrets.CF_ROUTE_IBM6 }}
           command: ./v2ray
           buildpacks:
           - binary_buildpack
@@ -442,9 +442,9 @@ jobs:
     - uses: citizen-of-planet-earth/cf-cli-action@v1
       with:
         cf_api: https://api.us-south.cf.cloud.ibm.com
-        cf_username: ${{ secrets.CF_USER_IBM }}
+        cf_username: ${{ secrets.CF_USER_IBM6 }}
         cf_password: ${{ secrets.CF_PASSWORD_IBM }}
-        cf_org: ${{ secrets.CF_ORG_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM6 }}
         cf_space: ${{ secrets.CF_SPACE_IBM }}
         command: >
-          push ${{ secrets.CF_APPNAME_IBM }} -f manifest-ibm.yml
+          push ${{ secrets.CF_APPNAME_IBM6 }} -f manifest-ibm.yml
