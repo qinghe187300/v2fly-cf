@@ -196,6 +196,7 @@ jobs:
           push ${{ secrets.CF_APPNAME_IBM2 }} -f manifest-ibm.yml
 
   ibm20200709:
+    needs: ibm20200708
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -258,6 +259,7 @@ jobs:
           push ${{ secrets.CF_APPNAME_IBM3 }} -f manifest-ibm.yml
           
   ibm20200712:
+    needs: ibm20200708
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
@@ -320,6 +322,7 @@ jobs:
           push ${{ secrets.CF_APPNAME_IBM4 }} -f manifest-ibm.yml
           
   ibm20200725:
+    needs: ibm20200708
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -382,6 +385,7 @@ jobs:
           push ${{ secrets.CF_APPNAME_IBM5 }} -f manifest-ibm.yml
           
   ibm20200731:
+    needs: ibm20200708
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
