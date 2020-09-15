@@ -56,8 +56,8 @@ jobs:
           disk_quota: 128M
           routes:
           - route: ${{ secrets.CF_ROUTE_IBM }}
-          #command: ./v2ray
-          # buildpacks:
+          command: ./v2ray
+          buildpacks:
            - binary_buildpack
         EOF
     
