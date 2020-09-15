@@ -1,4 +1,4 @@
-name: Deploy to IBM Cloud
+name: test IBM Cloud
 
 on:
   push:
@@ -6,7 +6,6 @@ on:
     - master
   schedule:
     - cron: "0 21 1/3 * ?"
-  workflow_dispatch:
   
 jobs:
   ibm20200620:
