@@ -1,0 +1,209 @@
+name: Deploy to IBM Cloud
+
+on:
+  push:
+    branches:
+    - master
+  schedule:
+    - cron: "0 21 1/3 * ?"
+  workflow_dispatch:
+  
+jobs:
+  ibm20200620:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - run: |
+       
+        cat > manifest-ibm.yml << EOF
+        ---
+        applications:
+        - name: ${{ secrets.CF_APPNAME_IBM }}
+          memory: 128M
+          disk_quota: 128M
+          routes:
+          - route: ${{ secrets.CF_ROUTE_IBM }}
+        EOF
+    
+    - uses: citizen-of-planet-earth/cf-cli-action@v1
+      with:
+        cf_api: https://api.us-south.cf.cloud.ibm.com
+        cf_username: ${{ secrets.CF_USER_IBM }}
+        cf_password: ${{ secrets.CF_PASSWORD_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM }}
+        cf_space: ${{ secrets.CF_SPACE_IBM }}
+        command: >
+          push ${{ secrets.CF_APPNAME_IBM }} -f manifest-ibm.yml
+          
+  ibm20200628:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    
+    - run: |
+
+        cat > manifest-ibm.yml << EOF
+        ---
+        applications:
+        - name: ${{ secrets.CF_APPNAME_IBM1 }}
+          memory: 128M
+          disk_quota: 128M
+          routes:
+          - route: ${{ secrets.CF_ROUTE_IBM1 }}
+
+        EOF
+    
+    - uses: citizen-of-planet-earth/cf-cli-action@v1
+      with:
+        cf_api: https://api.us-south.cf.cloud.ibm.com
+        cf_username: ${{ secrets.CF_USER_IBM1 }}
+        cf_password: ${{ secrets.CF_PASSWORD_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM1 }}
+        cf_space: ${{ secrets.CF_SPACE_IBM }}
+        command: >
+          push ${{ secrets.CF_APPNAME_IBM1 }} -f manifest-ibm.yml
+          
+  ibm20200708:
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: actions/checkout@v2
+    
+    - run: |
+        
+        cat > manifest-ibm.yml << EOF
+        ---
+        applications:
+        - name: ${{ secrets.CF_APPNAME_IBM2 }}
+          memory: 128M
+          disk_quota: 128M
+          routes:
+          - route: ${{ secrets.CF_ROUTE_IBM2 }}
+
+        EOF
+    
+    - uses: citizen-of-planet-earth/cf-cli-action@v1
+      with:
+        cf_api: https://api.us-south.cf.cloud.ibm.com
+        cf_username: ${{ secrets.CF_USER_IBM2 }}
+        cf_password: ${{ secrets.CF_PASSWORD_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM2 }}
+        cf_space: ${{ secrets.CF_SPACE_IBM }}
+        command: >
+          push ${{ secrets.CF_APPNAME_IBM2 }} -f manifest-ibm.yml
+
+  ibm20200709:
+    needs: ibm20200708
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - run: |
+        
+        cat > manifest-ibm.yml << EOF
+        ---
+        applications:
+        - name: ${{ secrets.CF_APPNAME_IBM3 }}
+          memory: 128M
+          disk_quota: 128M
+          routes:
+          - route: ${{ secrets.CF_ROUTE_IBM3 }}
+
+        EOF
+    
+    - uses: citizen-of-planet-earth/cf-cli-action@v1
+      with:
+        cf_api: https://api.us-south.cf.cloud.ibm.com
+        cf_username: ${{ secrets.CF_USER_IBM3 }}
+        cf_password: ${{ secrets.CF_PASSWORD_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM3 }}
+        cf_space: ${{ secrets.CF_SPACE_IBM }}
+        command: >
+          push ${{ secrets.CF_APPNAME_IBM3 }} -f manifest-ibm.yml
+          
+  ibm20200712:
+    needs: ibm20200708
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    
+    - run: |
+       
+        cat > manifest-ibm.yml << EOF
+        ---
+        applications:
+        - name: ${{ secrets.CF_APPNAME_IBM4 }}
+          memory: 128M
+          disk_quota: 128M
+          routes:
+          - route: ${{ secrets.CF_ROUTE_IBM4 }}
+
+        EOF
+    
+    - uses: citizen-of-planet-earth/cf-cli-action@v1
+      with:
+        cf_api: https://api.eu-gb.cf.cloud.ibm.com
+        cf_username: ${{ secrets.CF_USER_IBM4 }}
+        cf_password: ${{ secrets.CF_PASSWORD_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM4 }}
+        cf_space: ${{ secrets.CF_SPACE_IBM }}
+        command: >
+          push ${{ secrets.CF_APPNAME_IBM4 }} -f manifest-ibm.yml
+          
+  ibm20200725:
+    needs: ibm20200708
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - run: |
+        
+        cat > manifest-ibm.yml << EOF
+        ---
+        applications:
+        - name: ${{ secrets.CF_APPNAME_IBM5 }}
+          memory: 128M
+          disk_quota: 128M
+          routes:
+          - route: ${{ secrets.CF_ROUTE_IBM5 }}
+
+        EOF
+    
+    - uses: citizen-of-planet-earth/cf-cli-action@v1
+      with:
+        cf_api: https://api.us-south.cf.cloud.ibm.com
+        cf_username: ${{ secrets.CF_USER_IBM5 }}
+        cf_password: ${{ secrets.CF_PASSWORD_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM5 }}
+        cf_space: ${{ secrets.CF_SPACE_IBM }}
+        command: >
+          push ${{ secrets.CF_APPNAME_IBM5 }} -f manifest-ibm.yml
+          
+  ibm20200731:
+    needs: ibm20200708
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - run: |
+       
+        cat > manifest-ibm.yml << EOF
+        ---
+        applications:
+        - name: ${{ secrets.CF_APPNAME_IBM6 }}
+          memory: 128M
+          disk_quota: 128M
+          routes:
+          - route: ${{ secrets.CF_ROUTE_IBM6 }}
+
+        EOF
+    
+    - uses: citizen-of-planet-earth/cf-cli-action@v1
+      with:
+        cf_api: https://api.us-south.cf.cloud.ibm.com
+        cf_username: ${{ secrets.CF_USER_IBM6 }}
+        cf_password: ${{ secrets.CF_PASSWORD_IBM }}
+        cf_org: ${{ secrets.CF_ORG_IBM6 }}
+        cf_space: ${{ secrets.CF_SPACE_IBM }}
+        command: >
+          push ${{ secrets.CF_APPNAME_IBM6 }} -f manifest-ibm.yml
