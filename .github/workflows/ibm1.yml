@@ -1,4 +1,4 @@
-name: Deploy to IBM Cloud
+name: Deploy1 to IBM Cloud
 
 on:
   push:
